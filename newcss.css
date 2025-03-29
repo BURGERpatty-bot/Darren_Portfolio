@@ -1,0 +1,406 @@
+html,
+body {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    overflow: hidden;
+}
+
+p {
+    color: #dff3ee;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+li {
+    color: #dff3ee;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+i {
+    color: #5c8374;
+    font-size: 30px;
+}
+
+.bodyContainer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    height: 100%;
+}
+
+.leftBody {
+    display: flex;
+    flex-direction: row;
+    background-color: #092635;
+    margin: 0;
+    width: 80%;
+    transition: all 0.5s ease-in-out;
+    z-index: 5;
+    padding: 200px 20px 0 10%;
+}
+
+.rightBody {
+    display: flex;
+    flex-direction: row;
+    background-color: #c1c5d1;
+    margin: 0;
+    overflow: hidden;
+    width: 20%;
+    transition: all 0.5s ease-in-out;
+    z-index: 4;
+    opacity: .3;
+    filter: blur(5px);
+}
+
+/* left side */
+
+.imageContainer {
+    width: 400px;
+    height: 400px;
+    background-color: #5c8374;
+    border-radius: 10px;
+    transition: background-color .5s;
+    border-radius: 10px;
+}
+
+.imageContainer:hover {
+    background-color: #707070;
+}
+
+.imageContainer img {
+    filter: grayscale(25%);
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+    transition: filter .5s;
+}
+
+.imageContainer img:hover {
+    filter: grayscale(0);
+}
+
+.infoContainer {
+    position: relative;
+    width: 500px;
+    height: 400px;
+    margin: 0 0 0 100px;
+}
+
+.pilian {
+    width: 550px;
+}
+
+#abtMe {
+    color: #9ec8b9;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+#abtMe:hover {
+    cursor: pointer;
+
+}
+
+#skils {
+    color: #5c8374;
+    font-size: 35px;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+#skils:hover {
+    cursor: pointer;
+}
+
+#resume {
+    color: #5c8374;
+    font-size: 35px;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+#resume:hover {
+    cursor: pointer;
+}
+
+.contentContainer {
+    width: 525px;
+}
+
+#content1 {
+    text-align: justify;
+}
+
+#content2 {
+    display: none;
+    flex-direction: row;
+    margin: 25px 0 0 0;
+}
+
+#content3 {
+    display: none;
+    flex-direction: column;
+    text-align: justify;
+    margin: 20px 0 0 0;
+}
+
+.iconContainer {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.iconsCl {
+    display: inline-block; 
+    margin-right: 50px; 
+}
+
+#rowsan {
+    margin-left: 30px;
+}
+
+/* right */
+
+.rightBodyContainer {
+    width: 600px;
+    padding: 200px 10% 0 10%;
+}
+
+#unangLetra {
+    color: #092635;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.imageContainerFolder {
+    position: relative;
+    background-color: #f2b28c;
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 100px 2% 2% 2%;
+}
+
+.imageContainerFolder img {
+    width: 100%;
+    margin-top: -20px;
+}
+
+#arduinoText, #indieText, #digitalText {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-weight: bolder;
+    color: #dff3ee;
+    padding: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.folderContainer {
+    width: 800px;
+    display: flex;
+}
+
+#arduinoText:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+#indieText:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+#digitalText:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+/* resume */
+
+.clickable-image {
+    width: 200px;
+    cursor: pointer;
+    transition: transform, filter 0.5s;
+    filter: blur(1px);
+    filter: grayscale(75%);
+}
+
+.clickable-image:hover {
+    transform: scale(1.1);
+    filter: blur(0);
+    filter: grayscale(0);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content:left;
+    visibility: hidden;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    border: 4px solid rgb(172, 172, 172);
+    box-shadow: 0 0 10px rgb(172, 172, 172);
+    position: relative;
+    cursor: move;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: rgb(180, 194, 180);
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(111, 211, 178, 0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(57, 171, 175, 0.6);
+}
+
+/* hiddens */
+
+#arduinoContainer {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    background-color: #cecdd3;
+    max-width: 1000px;
+    min-width: 200px;
+    max-height: 400px;
+    min-height: 200px;
+    height: 50%;
+    width: 100%;
+    top: 30%;
+    left: 40%;
+    overflow-y: scroll;
+    border-radius: 3px;
+    z-index: 8;
+}
+
+#digitalArtContainer {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    background-color: #cecdd3;
+    max-width: 1000px;
+    min-width: 200px;
+    max-height: 400px;
+    min-height: 200px;
+    height: 50%;
+    width: 100%;
+    top: 30%;
+    left: 40%;
+    overflow-y: scroll;
+    transition: filter 0.3s ease-in-out;
+    border-radius: 3px;
+    z-index: 8;
+}
+
+#indieGameContainer {
+    display: none;
+    position: fixed;
+    background-color: #cecdd3;
+    max-width: 1000px;
+    min-width: 200px;
+    max-height: 400px;
+    min-height: 200px;
+    height: 50%;
+    width: 100%;
+    top: 30%;
+    left: 40%;
+    overflow-y: scroll;
+    transition: filter 0.3s ease-in-out;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    z-index: 8;
+}
+
+.foldersing {
+    position: relative;
+    margin: 10%;
+    text-align: center;
+    height: 100px;
+    width: 200px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.foldersing:hover {
+    cursor: pointer;
+}
+
+.foldersing img {
+    width: 103%;
+    margin-top: -8%;
+}
+
+#row1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.foldersingText {
+    font-size: 15px;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-weight: bolder;
+    color: #dff3ee;
+    padding: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.foldersingText:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.filesContainers {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}

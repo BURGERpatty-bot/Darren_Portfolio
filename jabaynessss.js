@@ -4,7 +4,119 @@ makeDraggable(document.getElementById('arduinoContainer'));
 makeDraggable(document.getElementById('digitalArtContainer'));
 makeDraggable(document.getElementById('indieGameContainer'));
 
+//var
+
+const leftBody = document.querySelector(".leftBody");
+const rightBody = document.querySelector(".rightBody");
+let isPhone = false;
+
 // functions
+
+function checkDevice() {
+    const bodyContainer = document.querySelector(".bodyContainer");
+    const infoContent = document.querySelector(".infoContainer");
+    const bady= document.querySelector("html");
+    const htiml = document.querySelector("body");
+    const mudal = document.querySelector(".modal");
+    const sarado = document.querySelector(".close");
+    const kanan = document.querySelector(".rightBodyContainer");
+    const folderKanan = document.querySelector(".folderContainer");
+
+    if (window.innerWidth <= 1150) {
+        isPhone = true;
+        bodyContainer.style.flexDirection = "column";
+        bodyContainer.style.height = "2030px";
+
+        leftBody.style.width = "100%";
+        leftBody.style.flexDirection = "column";
+        leftBody.style.padding = "5% 20% 30px 10%";
+        leftBody.style.opacity = "1";
+        leftBody.style.filter = "blur(0)";
+
+        rightBody.style.width = "100%";
+        rightBody.style.opacity = "1";
+        rightBody.style.filter = "blur(0)";
+        kanan.style.padding = "90px 10% 10% 10%";
+        
+        infoContent.style.margin = "5% 20% 0 0";
+
+        bady.style.overflowY = "scroll";
+        htiml.style.overflowY = "scroll";
+
+        mudal.style.justifyContent = "left";
+
+        sarado.style.right = "30%"
+        sarado.style.top = "0";
+
+        if (window.innerWidth <= 900) {
+            folderKanan.style.flexDirection = "column";
+        } else {
+            folderKanan.style.flexDirection = "row";
+        }
+
+    } else {
+        isPhone = false;
+        bodyContainer.style.flexDirection = "row";
+        bodyContainer.style.height = "100%";
+
+        leftBody.style.width = "80%";
+        leftBody.style.flexDirection = "row";
+        leftBody.style.textAlign = "unset";
+        leftBody.style.padding = "200px 20px 0 10%"
+        leftBody.style.opacity = "1";
+        leftBody.style.filter = "blur(0)";
+
+        rightBody.style.width = "20%";
+        rightBody.style.opacity = ".3";
+        rightBody.style.filter = "blur(5px)";
+        kanan.style.padding = "200px 10% 10% 10%";
+
+        infoContent.style.margin = "0 0 0 100px";
+        
+        bady.style.overflowY = "hidden";
+        htiml.style.overflowY = "hidden";
+
+        mudal.style.justifyContent = "center";
+
+        sarado.style.right = "30px"
+        sarado.style.top = "20px";
+    }
+}
+
+window.onload = checkDevice;
+window.onresize = checkDevice;
+
+document.addEventListener("DOMContentLoaded", function () {
+    const leftBody = document.querySelector(".leftBody");
+    const rightBody = document.querySelector(".rightBody");
+
+    function leftClickHandler() {
+        if (isPhone) return; // Disable clicks on phones
+        leftBody.style.width = "80%";
+        leftBody.style.opacity = "1";
+        leftBody.style.filter = "blur(0)";
+
+        rightBody.style.width = "20%";
+        rightBody.style.opacity = "0.3";
+        rightBody.style.filter = "blur(5px)";
+        rightBody.style.zIndex = "4";
+    }
+
+    function rightClickHandler() {
+        if (isPhone) return; // Disable clicks on phones
+        rightBody.style.width = "80%";
+        rightBody.style.opacity = "1";
+        rightBody.style.filter = "blur(0)";
+        rightBody.style.zIndex = "6";
+
+        leftBody.style.width = "20%";
+        leftBody.style.opacity = "0.5";
+        leftBody.style.filter = "blur(5px)";
+    }
+
+    leftBody.addEventListener("click", leftClickHandler);
+    rightBody.addEventListener("click", rightClickHandler);
+});
 
 function makeDraggable(element) {
     let isDragging = false;
@@ -60,31 +172,6 @@ function changeColor(x, y, z) {
     contentB.style.color = "#5c8374";
     contentC.style.color = "#5c8374";
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-    const leftBody = document.querySelector(".leftBody");
-    const rightBody = document.querySelector(".rightBody");
-
-    leftBody.addEventListener("click", function () {
-        leftBody.style.width = "80%";
-        leftBody.style.opacity = "1";
-        leftBody.style.filter = "blur(0)";
-
-        rightBody.style.width = "20%";
-        rightBody.style.opacity = "0.3";
-        rightBody.style.filter = "blur(5px)";
-    });
-
-    rightBody.addEventListener("click", function () {
-        rightBody.style.width = "80%";
-        rightBody.style.opacity = "1";
-        rightBody.style.filter = "blur(0)";
-
-        leftBody.style.width = "20%";
-        leftBody.style.opacity = "0.5";
-        leftBody.style.filter = "blur(5px)";
-    });
-});
 
 function openModal(imgElement) {
     let modal = document.getElementById("imageModal");
