@@ -1,0 +1,178 @@
+<html>
+
+<head>
+    <title>Darren's Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="newcss.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="bodyContainer">
+        <div class="leftBody">
+            <div class="imageContainer">
+                <img src="./Darren copy.png" alt="">
+            </div>
+            <div class="infoContainer">
+                <nav class="pilian">
+                    <span id="abtMe"
+                        onclick="showDivBaby('content1', 'content2', 'content3'), changeColor('abtMe', 'resume', 'skils')">ABOUT
+                        ME</span>
+                    <span id="skils"
+                        onclick="showDivBaby('content2', 'content1', 'content3'), changeColor('skils', 'resume', 'abtMe')">SKILLS</span>
+                    <span id="resume"
+                        onclick="showDivBaby('content3', 'content1', 'content2'), changeColor('resume', 'abtMe', 'skils')">RESUME</span>
+                </nav>
+                <div class="contentContainer">
+                    <div id="content1">
+                        <p>I work as a freelance Arduino programmer and electronics technician,
+                            specializing in IoT projects. Also, I have expertise on editing medias such as photos and
+                            videos using Adobe Applications. Currently, I am developing my own indie
+                            mobile game using Unity Engine, creating assets in Blender, and
+                            editing textures with various software tools.</p>
+                    </div>
+                    <div id="content2">
+                        <div class="rowS">
+                            <li>C#</li>
+                            <li>Java Script</li>
+                            <li>C++</li>
+                            <li>CSS</li>
+                            <li>HTML</li>
+                            <li>SQL</li>
+                        </div>
+                        <div id="rowsan" class="rowS">
+                            <li>Unity Engine</li>
+                            <li>Blender</li>
+                            <li>After Effects</li>
+                            <li>Photo Shop</li>
+                            <li>Hardware and Software Trouble Shooting</li>
+                        </div>
+                    </div>
+                    <div id="content3">
+                        <div class="resumeContainer">
+                            <img src="./LATEST RESUNME copy.png" alt="Click to enlarge" class="clickable-image"
+                                onclick="openModal(this)">
+                        </div>
+                        <div id="imageModal" class="modal">
+                            <span class="close" onclick="closeModal()">&times;</span>
+                            <img class="modal-content" id="modalImage">
+                        </div>
+                    </div>
+                </div>
+                <nav class="iconContainer">
+                    <a class="iconsCl" href="https://mail.google.com/mail/?view=cm&fs=1&to=daze01darren@gmail.com" target="_blank"><i
+                            class="fa-solid fa-envelope"></i></a>
+                    <a class="iconsCl" href="https://www.facebook.com/dha.dha.10888938" target="_blank"><i
+                            class="fa-brands fa-square-facebook"></i></a>
+                </nav>
+            </div>
+        </div>
+        <div class="rightBody">
+            <div class="rightBodyContainer">
+                <span id="unangLetra">WORKS</span>
+                <div class="folderContainer">
+                    <div class="imageContainerFolder">
+                        <span id="indieText" onclick="togglePopup('indieGameContainer','indieText')">INDIE GAME</span>
+                        <img id="img1" src="./1.png" alt="">
+                    </div>
+                    <div class="imageContainerFolder">
+                        <span id="digitalText" onclick="togglePopup('digitalArtContainer','digitalText')">DIGITAL
+                            ARTS</span>
+                        <img id="img2" src="./2.png" alt="">
+                    </div>
+                    <div class="imageContainerFolder">
+                        <span id="arduinoText" onclick="togglePopup('arduinoContainer','arduinoText')">ARDUINO
+                            PROJECTS</span>
+                        <img id="img3" src="./arduino.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hiddens">
+        <div class="filesContainers" id="arduinoContainer">
+            <div id="row1">
+                <div class="foldersing"><a
+                        href="https://drive.google.com/drive/folders/1lkfojFdjZTW5kvv8OJpgN3Y1MPUoW8oT?usp=drive_link"
+                        target="_blank">
+                        <span class="foldersingText">IoT
+                            Device for PigFeedApp</span>
+                        <img src="./arduinoo.jpg" alt="">
+                    </a>
+                </div>
+                <div class="foldersing"><a
+                        href="https://drive.google.com/drive/folders/1FksXiIOPTjopdwgQRUJeSbeH3xwTJtTi?usp=drive_link"
+                        target="_blank">
+                        <span class="foldersingText">IoT Device for LettuceHydroFarming</span>
+                        <img src="./arduinoo.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div id="row1">
+                <div class="foldersing"><a
+                        href="https://drive.google.com/drive/folders/1THD-2QFA4UaVpzPXm66kYEuDTbR22ubN?usp=drive_link"
+                        target="_blank">
+                        <span class="foldersingText">IoT Device for SoilTester</span>
+                        <img src="./arduinoo.jpg" alt="">
+                    </a>
+                </div>
+                <div class="foldersing"><a
+                        href="https://drive.google.com/drive/folders/1mWc0T4z4ubA-MvNYh1FMbkSZ8iUCe5dW?usp=drive_link"
+                        target="_blank">
+                        <span class="foldersingText">automatic FishFeeding Machine</span>
+                        <img src="./arduinoo.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div id="row1">
+                <div class="foldersing"><a
+                        href="https://drive.google.com/drive/folders/1SUeyUnC0mSWa5BgxpvK5N7SBxRDS4zw6?usp=drive_link"
+                        target="_blank">
+                        <span class="foldersingText">IoT Device for TomatoMonitoring</span>
+                        <img src="./arduinoo.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="filesContainers" id="digitalArtContainer">
+            <div id="row1">
+                <div class="foldersing"><a
+                        href="https://drive.google.com/drive/folders/1zhoUEeIUPgc0pmkrYZhXNYf7jjer4yt5?usp=drive_link"
+                        target="_blank">
+                        <span class="foldersingText">Paints</span>
+                        <img src="./2.png" alt="">
+                    </a>
+                </div>
+                <div class="foldersing"><a
+                        href="https://drive.google.com/drive/folders/1bZj68QOzxYIwkG_5oiTJJOVh37Wr8MLV?usp=drive_link"
+                        target="_blank">
+                        <span class="foldersingText">Video A</span>
+                        <img src="./2.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div id="row1">
+                <div class="foldersing"><a
+                        href="https://drive.google.com/drive/folders/1OoMXHWCAY0JhDx71_sOVoV4daBepfYeo?usp=drive_link"
+                        target="_blank">
+                        <span class="foldersingText">Designs</span>
+                        <img src="./2.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="filesContainers" id="indieGameContainer">
+            <div class="foldersing"><a
+                    href="https://drive.google.com/drive/folders/1_4RfkhfXcetMgZgL8DGzsVd6noNeusWm?usp=drive_link"
+                    target="_blank">
+                    <span class="foldersingText">In Development MemeFighter</span>
+                    <img src="./menusplash.png" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="jabaynessss.js"></script>
+</body>
+
+</html>
