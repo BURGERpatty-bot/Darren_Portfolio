@@ -80,6 +80,8 @@ function checkDevice() {
 
         sarado.style.right = "30px"
         sarado.style.top = "20px";
+
+        folderKanan.style.flexDirection = "row";
     }
 }
 
