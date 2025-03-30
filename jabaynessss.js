@@ -34,6 +34,7 @@ function checkDevice() {
     const art = document.getElementById("digitalArtContainer");
     const rowQ = document.querySelectorAll(".row1");
     const folderText = document.querySelectorAll(".foldersingText");
+    const namKo = document.getElementById("nameKo");
 
     if (window.innerWidth <= 1150) {
         isPhone = true;
@@ -91,6 +92,8 @@ function checkDevice() {
             arduino.style.top = "20%";
             arduino.style.left = "3%";
 
+            namKo.style.fontSize = "25px";
+
             rowQ.forEach(element => {
                 element.style.flexDirection = "column";
             });
@@ -113,6 +116,8 @@ function checkDevice() {
             textB.style.opacity = "0";
             textC.style.opacity = "0";
             folderText.style.opacity = "0";
+
+            namKo.style.fontSize = "40px";
         }
 
     } else {
@@ -161,6 +166,8 @@ function checkDevice() {
         arduino.style.width = "100%";
         arduino.style.top = "30%";
         arduino.style.left = "20%";
+
+        namKo.style.fontSize = "40px";
 
         rowQ.style.flexDirection = "row";
 
