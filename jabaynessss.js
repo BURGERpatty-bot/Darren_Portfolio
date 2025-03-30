@@ -15,12 +15,25 @@ let isPhone = false;
 function checkDevice() {
     const bodyContainer = document.querySelector(".bodyContainer");
     const infoContent = document.querySelector(".infoContainer");
-    const bady= document.querySelector("html");
+    const bady = document.querySelector("html");
     const htiml = document.querySelector("body");
-    const mudal = document.querySelector(".modal");
-    const sarado = document.querySelector(".close");
     const kanan = document.querySelector(".rightBodyContainer");
     const folderKanan = document.querySelector(".folderContainer");
+    const abtme = document.getElementById("abtMe");
+    const skels = document.getElementById("skils");
+    const resum = document.getElementById("resume");
+    const content = document.querySelector(".contentContainer");
+    const propayl = document.querySelector(".imageContainer");
+    const pilian = document.querySelector(".pilian");
+    const rowsan = document.querySelector(".rowS");
+    const textA = document.getElementById("arduinoText");
+    const textB = document.getElementById("indieText");
+    const textC = document.getElementById("digitalText");
+    const arduino = document.getElementById("arduinoContainer");
+    const indie = document.getElementById("indieGameContainer");
+    const art = document.getElementById("digitalArtContainer");
+    const rowQ = document.querySelectorAll(".row1");
+    const folderText = document.querySelectorAll(".foldersingText");
 
     if (window.innerWidth <= 1150) {
         isPhone = true;
@@ -37,21 +50,69 @@ function checkDevice() {
         rightBody.style.opacity = "1";
         rightBody.style.filter = "blur(0)";
         kanan.style.padding = "90px 10% 10% 10%";
-        
+
         infoContent.style.margin = "5% 20% 0 0";
 
         bady.style.overflowY = "scroll";
         htiml.style.overflowY = "scroll";
 
-        mudal.style.justifyContent = "left";
-
-        sarado.style.right = "30%"
-        sarado.style.top = "0";
-
         if (window.innerWidth <= 900) {
             folderKanan.style.flexDirection = "column";
         } else {
             folderKanan.style.flexDirection = "row";
+        }
+
+        if (window.innerWidth <= 500) {
+            abtme.style.fontSize = "20px";
+            skels.style.fontSize = "20px";
+            resum.style.fontSize = "20px";
+            leftBody.style.padding = "5% 20% 30px 5%";
+
+            content.style.width = "320px";
+            pilian.style.width = "330px";
+
+            propayl.style.width = "320px";
+            propayl.style.height = "320px";
+            bodyContainer.style.height = "1845px";
+            rowsan.style.width = "200px";
+            textA.style.opacity = "1";
+            textB.style.opacity = "1";
+            textC.style.opacity = "1";
+
+            kanan.style.padding = "30px 5% 10% 5%";
+
+            art.style.width = "90%";
+            art.style.top = "20%";
+            art.style.left = "3%";
+            indie.style.width = "90%";
+            indie.style.top = "20%";
+            indie.style.left = "3%";
+            arduino.style.width = "90%";
+            arduino.style.top = "20%";
+            arduino.style.left = "3%";
+
+            rowQ.forEach(element => {
+                element.style.flexDirection = "column";
+            });
+            folderText.forEach(element => {
+                element.style.opacity = "1";
+            });
+        
+        } else {
+            abtme.style.fontSize = "35px";
+            skels.style.fontSize = "35px";
+            resum.style.fontSize = "35px";
+
+            content.style.width = "525px";
+
+            propayl.style.width = "400px";
+            propayl.style.height = "400px";
+            pilian.style.width = "550px";
+
+            textA.style.opacity = "0";
+            textB.style.opacity = "0";
+            textC.style.opacity = "0";
+            folderText.style.opacity = "0";
         }
 
     } else {
@@ -72,16 +133,43 @@ function checkDevice() {
         kanan.style.padding = "200px 10% 10% 10%";
 
         infoContent.style.margin = "0 0 0 100px";
-        
+
         bady.style.overflowY = "hidden";
         htiml.style.overflowY = "hidden";
 
-        mudal.style.justifyContent = "center";
-
-        sarado.style.right = "30px"
-        sarado.style.top = "20px";
-
         folderKanan.style.flexDirection = "row";
+        content.style.width = "525px";
+
+        abtme.style.fontSize = "35px";
+        skels.style.fontSize = "35px";
+        resum.style.fontSize = "35px";
+        propayl.style.width = "400px";
+        propayl.style.height = "400px";
+        pilian.style.width = "550px";
+
+        textA.style.opacity = "0";
+        textB.style.opacity = "0";
+        textC.style.opacity = "0";
+        folderText.style.opacity = "0";
+
+        art.style.width = "100%";
+        art.style.top = "30%";
+        art.style.left = "20%";
+        indie.style.width = "100%";
+        indie.style.top = "30%";
+        indie.style.left = "20%";
+        arduino.style.width = "100%";
+        arduino.style.top = "30%";
+        arduino.style.left = "20%";
+
+        rowQ.style.flexDirection = "row";
+
+        rowQ.forEach(element => {
+            element.style.flexDirection = "row";
+        });
+        folderText.forEach(element => {
+            element.style.opacity = "0";
+        });
     }
 }
 
