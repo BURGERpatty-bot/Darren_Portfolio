@@ -238,7 +238,7 @@ i {
 /* resume */
 
 .clickable-image {
-    width: 200px;
+    width: 160px;
     cursor: pointer;
     transition: transform, filter 0.5s;
     filter: blur(1px);
