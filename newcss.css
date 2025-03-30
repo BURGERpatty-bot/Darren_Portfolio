@@ -91,19 +91,25 @@ i {
     margin: 0 0 0 100px;
 }
 
+.infoContainer span {
+    font-size: 40px;
+    font-weight: bold;
+    color: #c8ece0;
+}
+
 .pilian {
     width: 550px;
+    margin-top: 10px;
 }
 
 #abtMe {
     color: #9ec8b9;
-    font-size: 20px;
+    font-size: 35px;
     font-weight: bold;
 }
 
 #abtMe:hover {
     cursor: pointer;
-
 }
 
 #skils {
